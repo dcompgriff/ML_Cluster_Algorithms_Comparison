@@ -17,12 +17,14 @@ import random
 prob1Data = None
 prob1Data2 = None
 clusterCenters = None
+clusterCenters2 = None
 
 
 
 def prob1():
     global prob1Data
     global clusterCenters
+    global clusterCenters2
     global prob1Data2    
     
     listdat = [(6, 12), (19, 7), (15, 4), (11, 0), 
@@ -37,10 +39,6 @@ def prob1():
     listdat.reverse()
     prob1Data2 = pd.DataFrame(listdat, columns=['X','Y'])
     prob1Data2['Cluster'] = pd.Series(np.zeros(prob1Data.shape[0]))
-    
-    #randomIndex = np.arange(prob1Data.shape[0])
-    #np.random.shuffle(randomIndex)
-    #prob1Data2 = prob1Data2.loc[randomIndex]
 
     #RUN PART A
     clusterCenters = sequantialClusteringAlgorithm(prob1Data)
@@ -56,15 +54,10 @@ def prob1():
         clusterCircles.append(plt.Circle((clusterCenters[cluster][0], clusterCenters[cluster][1]), 12, color=randColor, fill=False, clip_on=False))
     #plt.scatter(prob1Data[prob1Data.Cluster == 1].X, prob1Data[prob1Data.Cluster == 1].Y, label='Cluster 1', color=)     
     plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-    
-    #Plot cluster circles with radius 12
-    #fig = plt.gcf()
-    #for circle in clusterCircles:
-    #    fig.gca().add_artist(circle)   
     plt.show()
-    plt.clf() 
     
     #RUN PART B
+    plt.clf() 
     clusterCenters2 = sequantialClusteringAlgorithm(prob1Data2)
     #Plot the data on a scatter plot. 
     colorHandles = []
@@ -74,9 +67,11 @@ def prob1():
         colorHandles.append(matplotlib.patches.Patch(color=randColor, label='K=' + str(cluster)))      
         plt.scatter(prob1Data2[prob1Data2.Cluster == cluster].X, prob1Data2[prob1Data2.Cluster == cluster].Y, label="Cluster " + str(cluster), color=randColor)     
     plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
-  
     plt.show()
     
+    #RUN PART C    
+    randindex = randIndex(prob1Data, prob1Data2)
+    print("Rand Index: " + str(randindex))
 
 
 '''
@@ -136,8 +131,29 @@ def sequantialClusteringAlgorithm(dataSet):
 def dist(point1, point2):
     sumsq = 0
     for index in range(0, len(point1) - 1):
-        sumsq += math.pow(point1[index] - point2[index],2)
+        sumsq += math.pow(point1[index] - point2[index], 2)
     return math.pow(sumsq,.5)
+
+def randIndex(clustering1, clustering2):
+    f00 = 0
+    f01 = 0
+    f10 = 0
+    f11 = 0
+
+    for firstIndex in range(0, clustering1.shape[0] - 1):
+        for secondIndex in range(firstIndex + 1, clustering1.shape[0]):
+            
+            if clustering1.iloc[firstIndex].Cluster != clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster != clustering2.iloc[secondIndex].Cluster:
+                f00 += 1
+            elif clustering1.iloc[firstIndex].Cluster != clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster == clustering2.iloc[secondIndex].Cluster:
+                f01 += 1
+            elif clustering1.iloc[firstIndex].Cluster == clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster != clustering2.iloc[secondIndex].Cluster:
+                f10 += 1
+            elif clustering1.iloc[firstIndex].Cluster == clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster == clustering2.iloc[secondIndex].Cluster:
+                f11 += 1
+            
+    return (f00 + f11) / float(f00 + f01 + f10 + f11)
+
 
 
 def sumSquaredError():
