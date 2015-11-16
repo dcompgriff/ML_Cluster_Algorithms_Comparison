@@ -12,12 +12,16 @@ import matplotlib.pyplot as plt
 import matplotlib
 import math
 import random
+import scipy.cluster.hierarchy as heirarchical
+from scipy.cluster.hierarchy import fcluster
 
 
 prob1Data = None
 prob1Data2 = None
 clusterCenters = None
 clusterCenters2 = None
+linkageMatrix = None
+dend = None
 
 
 
@@ -155,15 +159,107 @@ def randIndex(clustering1, clustering2):
     return (f00 + f11) / float(f00 + f01 + f10 + f11)
 
 
+def prob2():  
+    global prob2Data
+    global linkageMatrix
+    global dend
+    
+    listdat = [(6, 12), (19, 7), (15, 4), (11, 0), 
+                              (18, 12), (9, 20), (19, 22), (18, 17), 
+                            (5, 11), (4, 18), (7, 15), (21, 18), (1, 19), 
+                            (1, 4), (0, 9), (5, 11)]    
+    
+    #Initialize the data
+    prob2Data = pd.DataFrame(listdat, columns=['X','Y'])
+    
+    #Perform Clustering.
+    linkageMatrix = heirarchical.linkage(prob2Data.values, method='single', metric='euclidean')
+    
+    #Draw Dendrogram.    
+    dend = heirarchical.dendrogram(linkageMatrix)
+    plt.show()
+    
+    #Clustering with the distance set to 5.4 so that there are 3 clusters.
+    prob2Data['Cluster'] = fcluster(linkageMatrix, 5.4, criterion='distance')
+    
+    #Plot the data on a scatter plot. 
+    plt.clf()
+    colorHandles = []
+    #Create each cluster scatter plot.
+    for cluster in range(1, 4):
+        randColor = [random.random(), random.random(), random.random()]
+        colorHandles.append(matplotlib.patches.Patch(color=randColor, label='K=' + str(cluster)))      
+        plt.scatter(prob2Data[prob2Data.Cluster == cluster].X, prob2Data[prob2Data.Cluster == cluster].Y, label="Cluster " + str(cluster), color=randColor)     
+    plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.show()
+    
+    #PART B
+    #Initialize the data
+    prob2Data2 = pd.DataFrame(listdat, columns=['X','Y'])
+    
+    #Perform Clustering.
+    linkageMatrix = heirarchical.linkage(prob2Data2.values, method='complete', metric='euclidean')
+    
+    #Draw Dendrogram.    
+    dend = heirarchical.dendrogram(linkageMatrix)
+    plt.show()
+    
+    #Clustering with the distance set to 20 so that there are 3 clusters.
+    prob2Data2['Cluster'] = fcluster(linkageMatrix, 20, criterion='distance')
+    
+    #Plot the data on a scatter plot. 
+    plt.clf()
+    colorHandles = []
+    #Create each cluster scatter plot.
+    for cluster in range(1, 4):
+        randColor = [random.random(), random.random(), random.random()]
+        colorHandles.append(matplotlib.patches.Patch(color=randColor, label='K=' + str(cluster)))      
+        plt.scatter(prob2Data2[prob2Data2.Cluster == cluster].X, prob2Data2[prob2Data2.Cluster == cluster].Y, label="Cluster " + str(cluster), color=randColor)     
+    plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.show()
 
-def sumSquaredError():
-    pass
+    #PART C. Calculate the SSE or both clusterings.
+    singleLinkSSE, maxClusterContribSingle = sumSquaredError(prob2Data)  
+    completeLinkSSE, maxClusterContribComplete = sumSquaredError(prob2Data2)  
+    print "Sum squared error for single link: " + str(singleLinkSSE)
+    print "Cluster contributing most to SSE: " + str(maxClusterContribSingle[0])    
+    print "Cluster SSE: " + str(maxClusterContribSingle[1])
+    print
+    print "Sum squared error for complete link: " + str(completeLinkSSE)
+    print "Cluster contributing most to SSE: " + str(maxClusterContribComplete[0])    
+    print "Cluster SSE: " + str(maxClusterContribComplete[1])
+    
+
+def sumSquaredError(dataSet):
+    totalSum = 0
+    #Store cluster with maximum contribution to sse as (cluster, SSE contrib)
+    maxClusterContribution = (0, 0)    
+    
+    #For each cluster
+    #   For each point in each cluster
+    #       Find squared distance between mean and point, and add to cluster sum.
+    #Sum all cluster values. 
+
+    for cluster in range(1, 4):
+        #Get view of all data in the same cluster. 
+        currentClusterData = dataSet[dataSet.Cluster == cluster]  
+        meanX = currentClusterData.X.values.mean()
+        meanY = currentClusterData.Y.values.mean()
+        clusterSum = 0
+        for index, row in currentClusterData.iterrows():
+            clusterSum += math.pow(meanX-row.X, 2) + math.pow(meanY-row.Y, 2)
+        if clusterSum > maxClusterContribution[1]:
+            maxClusterContribution = (cluster, clusterSum)
+        totalSum += clusterSum
+    
+    
+    return totalSum, maxClusterContribution
 
 
 def main():
     print("In Main.")
-    prob1()
-    #prob2()
+    #prob1()
+    prob2()
 
 
 
