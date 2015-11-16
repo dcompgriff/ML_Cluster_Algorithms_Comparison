@@ -15,22 +15,32 @@ import random
 
 
 prob1Data = None
+prob1Data2 = None
 clusterCenters = None
 
 
 
 def prob1():
     global prob1Data
-    global clusterCenters    
+    global clusterCenters
+    global prob1Data2    
     
-    #Initialize the data
-    prob1Data = pd.DataFrame([(6, 12), (19, 7), (15, 4), (11, 0), 
+    listdat = [(6, 12), (19, 7), (15, 4), (11, 0), 
                               (18, 12), (9, 20), (19, 22), (18, 17), 
                             (5, 11), (4, 18), (7, 15), (21, 18), (1, 19), 
-                            (1, 4), (0, 9), (5, 11)], columns=['X','Y'])
+                            (1, 4), (0, 9), (5, 11)]    
+    
+    #Initialize the data
+    prob1Data = pd.DataFrame(listdat, columns=['X','Y'])
     prob1Data['Cluster'] = pd.Series(np.zeros(prob1Data.shape[0]))
-    prob1Data2 = prob1Data.copy()
-    prob1Data2 = prob1Data2.loc[range(prob1Data.shape[0]-1, -1, -1)]
+    #Reverse the data order and create a new data set for it.
+    listdat.reverse()
+    prob1Data2 = pd.DataFrame(listdat, columns=['X','Y'])
+    prob1Data2['Cluster'] = pd.Series(np.zeros(prob1Data.shape[0]))
+    
+    #randomIndex = np.arange(prob1Data.shape[0])
+    #np.random.shuffle(randomIndex)
+    #prob1Data2 = prob1Data2.loc[randomIndex]
 
     #RUN PART A
     clusterCenters = sequantialClusteringAlgorithm(prob1Data)
@@ -66,10 +76,6 @@ def prob1():
     plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
   
     plt.show()
-
-
-    
-    
     
 
 
@@ -106,7 +112,7 @@ def sequantialClusteringAlgorithm(dataSet):
         if distance <= theta and numClusters <= maxClusters:
             dataSet['Cluster'].loc[index] = clusterToAssign 
             newX = clusterCenters[clusterToAssign][0] + (dataSet.ix[index].X - clusterCenters[clusterToAssign][0])/(clusterCenters[clusterToAssign][2]+1.0) 
-            newY = clusterCenters[clusterToAssign][1] + (dataSet.ix[index].X - clusterCenters[clusterToAssign][1])/(clusterCenters[clusterToAssign][2]+1.0) 
+            newY = clusterCenters[clusterToAssign][1] + (dataSet.ix[index].Y - clusterCenters[clusterToAssign][1])/(clusterCenters[clusterToAssign][2]+1.0) 
             newSize = clusterCenters[clusterToAssign][2] + 1
             clusterCenters[clusterToAssign] = (newX, newY, newSize)
             dataSet['Cluster'].loc[index] = clusterToAssign
@@ -119,13 +125,12 @@ def sequantialClusteringAlgorithm(dataSet):
             #print("At Max")
             dataSet.ix[index].Cluster = clusterToAssign 
             newX = clusterCenters[clusterToAssign][0] + (dataSet.ix[index].X - clusterCenters[clusterToAssign][0])/(clusterCenters[clusterToAssign][2]+1.0) 
-            newY = clusterCenters[clusterToAssign][1] + (dataSet.ix[index].X - clusterCenters[clusterToAssign][1])/(clusterCenters[clusterToAssign][2]+1.0) 
+            newY = clusterCenters[clusterToAssign][1] + (dataSet.ix[index].Y - clusterCenters[clusterToAssign][1])/(clusterCenters[clusterToAssign][2]+1.0) 
             newSize = clusterCenters[clusterToAssign][2] + 1
             clusterCenters[clusterToAssign] = (newX, newY, newSize)   
             dataSet['Cluster'].loc[index] = clusterToAssign        
     
     return clusterCenters
-            
 
     
 def dist(point1, point2):
@@ -142,7 +147,7 @@ def sumSquaredError():
 def main():
     print("In Main.")
     prob1()
-
+    #prob2()
 
 
 
