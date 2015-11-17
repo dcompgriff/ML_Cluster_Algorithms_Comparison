@@ -1,0 +1,612 @@
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          3, Cluster    1, Name: 1, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          5, Cluster    1, Name: 2, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          6, Cluster    1, Name: 3, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          8, Cluster    1, Name: 4, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          11, Cluster     1, Name: 5, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          1, Cluster    1, Name: 0, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          5, Cluster    1, Name: 2, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          6, Cluster    1, Name: 3, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          8, Cluster    1, Name: 4, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          11, Cluster     1, Name: 5, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          3, Cluster    1, Name: 1, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          6, Cluster    1, Name: 3, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          8, Cluster    1, Name: 4, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          11, Cluster     1, Name: 5, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          5, Cluster    1, Name: 2, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          8, Cluster    1, Name: 4, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          11, Cluster     1, Name: 5, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          6, Cluster    1, Name: 3, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          11, Cluster     1, Name: 5, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          8, Cluster    1, Name: 4, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          12, Cluster     1, Name: 6, dtype: float64
+Assigned to f11
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          11, Cluster     1, Name: 5, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          13, Cluster     1, Name: 7, dtype: float64
+Assigned to f11
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          12, Cluster     1, Name: 6, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          14, Cluster     1, Name: 8, dtype: float64
+Assigned to f11
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          13, Cluster     1, Name: 7, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          15, Cluster     1, Name: 9, dtype: float64
+Assigned to f11
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          14, Cluster     1, Name: 8, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          16, Cluster     1, Name: 10, dtype: float64
+Assigned to f11
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          15, Cluster     1, Name: 9, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          28, Cluster     2, Name: 12, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f01
+
+Point A: X          16, Cluster     1, Name: 10, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f01
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          32, Cluster     2, Name: 13, dtype: float64
+Assigned to f11
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f11
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f11
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f11
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f11
+
+Point A: X          28, Cluster     2, Name: 12, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11
+
+Point A: X          32, Cluster     2, Name: 13, dtype: float64
+Point B: X          33, Cluster     2, Name: 14, dtype: float64
+Assigned to f11
+
+Point A: X          32, Cluster     2, Name: 13, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f11
+
+Point A: X          32, Cluster     2, Name: 13, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f11
+
+Point A: X          32, Cluster     2, Name: 13, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f11
+
+Point A: X          32, Cluster     2, Name: 13, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11
+
+Point A: X          33, Cluster     2, Name: 14, dtype: float64
+Point B: X          34, Cluster     2, Name: 15, dtype: float64
+Assigned to f11
+
+Point A: X          33, Cluster     2, Name: 14, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f11
+
+Point A: X          33, Cluster     2, Name: 14, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f11
+
+Point A: X          33, Cluster     2, Name: 14, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11
+
+Point A: X          34, Cluster     2, Name: 15, dtype: float64
+Point B: X          35, Cluster     2, Name: 16, dtype: float64
+Assigned to f11
+
+Point A: X          34, Cluster     2, Name: 15, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f11
+
+Point A: X          34, Cluster     2, Name: 15, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11
+
+Point A: X          35, Cluster     2, Name: 16, dtype: float64
+Point B: X          36, Cluster     2, Name: 17, dtype: float64
+Assigned to f11
+
+Point A: X          35, Cluster     2, Name: 16, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11
+
+Point A: X          36, Cluster     2, Name: 17, dtype: float64
+Point B: X          37, Cluster     2, Name: 18, dtype: float64
+Assigned to f11

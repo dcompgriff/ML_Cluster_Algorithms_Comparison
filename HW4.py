@@ -14,6 +14,7 @@ import math
 import random
 import scipy.cluster.hierarchy as heirarchical
 from scipy.cluster.hierarchy import fcluster
+import os
 
 
 prob1Data = None
@@ -22,6 +23,8 @@ clusterCenters = None
 clusterCenters2 = None
 linkageMatrix = None
 dend = None
+dataSet = None
+dataSet2 = None
 
 
 
@@ -143,18 +146,38 @@ def randIndex(clustering1, clustering2):
     f01 = 0
     f10 = 0
     f11 = 0
+    f = open(os.getcwd() + "\\randIndexFile.txt", 'w+')
 
     for firstIndex in range(0, clustering1.shape[0] - 1):
         for secondIndex in range(firstIndex + 1, clustering1.shape[0]):
             
             if clustering1.iloc[firstIndex].Cluster != clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster != clustering2.iloc[secondIndex].Cluster:
                 f00 += 1
+                f.write("\nPoint A: " + (str(clustering1.iloc[firstIndex]).replace('\n', ', ')))
+                f.write( "\nPoint B: " + (str(clustering1.iloc[secondIndex]).replace('\n', ', ')))
+                f.write( "\nAssigned to f00\n")
             elif clustering1.iloc[firstIndex].Cluster != clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster == clustering2.iloc[secondIndex].Cluster:
                 f01 += 1
+                f.write( "\nPoint A: " + (str(clustering1.iloc[firstIndex]).replace('\n', ', ')))
+                f.write( "\nPoint B: " + (str(clustering1.iloc[secondIndex]).replace('\n', ', ')))
+                f.write( "\nAssigned to f01\n")
             elif clustering1.iloc[firstIndex].Cluster == clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster != clustering2.iloc[secondIndex].Cluster:
                 f10 += 1
+                f.write( "\nPoint A: " + (str(clustering1.iloc[firstIndex]).replace('\n', ', ')))
+                f.write( "\nPoint B: " + (str(clustering1.iloc[secondIndex]).replace('\n', ', ')))
+                f.write( "\nAssigned to f10\n")
             elif clustering1.iloc[firstIndex].Cluster == clustering1.iloc[secondIndex].Cluster and clustering2.iloc[firstIndex].Cluster == clustering2.iloc[secondIndex].Cluster:
                 f11 += 1
+                f.write( "\nPoint A: " + (str(clustering1.iloc[firstIndex]).replace('\n', ', ')))
+                f.write( "\nPoint B: " + (str(clustering1.iloc[secondIndex]).replace('\n', ', ')))
+                f.write( "\nAssigned to f11\n")
+            
+    f.close()
+    print "f00 = " + str(f00)
+    print "f01 = " + str(f01)
+    print "f10 = " + str(f10)
+    print "f11 = " + str(f11)
+            
             
     return (f00 + f11) / float(f00 + f01 + f10 + f11)
 
@@ -281,13 +304,167 @@ def correlationClusterAnalysis(dataSet):
     
     return correlation, proximityMatrix, incidenceMatrix
     
+def prob3():
+    global dataSet
+    global dataSet2
+    radius = 4
+    minpts = 3    
+    pointsDict = {}
+    numClusters = 0
     
+    datalist = [1, 3, 5, 6, 8, 11, 12, 13, 14, 15, 16, 22, 28, 32, 33, 34, 35, 36, 37, 42, 58]
+    dataSet = pd.DataFrame(datalist, columns=['X'])
+    #Core points are 1, fringe points are 2, noise points are 0
+    dataSet['Pkind'] = np.zeros(len(datalist))
+    dataSet['Cluster'] = np.zeros(len(datalist))
+    
+    #Find all core points.
+    for pointIndex in range(0, dataSet.shape[0]):
+        #Initialize num points to 0.
+        pointsDict[pointIndex] = 0
+        dist = 0
+        for comparisonIndex in range(0, dataSet.shape[0]):
+            dist = math.sqrt(math.pow(dataSet.iloc[pointIndex].X - dataSet.iloc[comparisonIndex].X, 2))
+            if dist <= radius:
+                pointsDict[pointIndex] = pointsDict[pointIndex] + 1
+            if pointsDict[pointIndex] >= minpts:
+                #Core point identified. Mark it and move to next point.
+                dataSet['Pkind'].iloc[pointIndex] = 1
+                continue
+            
+    #Find all fringe points.
+    for fringePointIndex in dataSet[dataSet.Pkind == 0].index.tolist(): 
+        for comparisonIndex in dataSet[dataSet.Pkind == 1].index.tolist():
+            dist = math.sqrt(math.pow(dataSet.iloc[fringePointIndex].X - dataSet.iloc[comparisonIndex].X, 2))
+            if dist <= radius:            
+                dataSet['Pkind'].iloc[fringePointIndex] = 2
+                continue
+            
+    print("Noise points: Pkind = 0")        
+    print("Core points: Pkind = 1") 
+    print("Fringe points: Pkind = 2")   
+    print dataSet
+    print        
+            
+    #Eliminate all points not core or fringe.
+    noise = dataSet.copy()[dataSet.Pkind == 0]
+    dataSet = dataSet[dataSet.Pkind != 0]
+    
+    #For each core point
+    for corePointIndex in range(0, dataSet.shape[0]):
+        #If non-core point, continue.
+        if dataSet['Pkind'].iloc[corePointIndex] != 1:
+            continue
+        #If core point and no cluster, assign new cluster. 
+        if dataSet['Cluster'].iloc[corePointIndex] == 0:
+            numClusters += 1
+            dataSet['Cluster'].iloc[corePointIndex] = numClusters
+        #Assign all points in vicinity of core to same cluster as core.
+        for comparisonIndex in range(0, dataSet.shape[0]):
+            dist = math.sqrt(math.pow(dataSet.iloc[corePointIndex].X - dataSet.iloc[comparisonIndex].X, 2))
+            if dist <= radius and dataSet['Cluster'].iloc[comparisonIndex] == 0:
+                dataSet['Cluster'].iloc[comparisonIndex] = dataSet['Cluster'].iloc[corePointIndex] 
+    
+    plt.clf()
+    colorHandles = []
+    #Create each cluster scatter plot.
+    for cluster in set(dataSet.Cluster.tolist()):
+        randColor = [random.random(), random.random(), random.random()]
+        colorHandles.append(matplotlib.patches.Patch(color=randColor, label='K=' + str(cluster)))      
+        plt.scatter(dataSet[dataSet.Cluster == cluster].X, np.zeros(dataSet[dataSet.Cluster == cluster].shape[0]), label="Cluster " + str(cluster), color=randColor)     
+    #Plot noise
+    colorHandles.append(matplotlib.patches.Patch(color='r', label='noise' + str(cluster)))      
+    plt.scatter(noise.X, np.zeros(noise.shape[0]), color='r')     
+    
+    #Plot final graph of data. 
+    plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.show()    
+    
+    #PART B
+    radius = 6
+    minpts = 3    
+    pointsDict = {}
+    numClusters = 0
+    
+    dataSet2 = pd.DataFrame(datalist, columns=['X'])
+    #Core points are 1, fringe points are 2, noise points are 0
+    dataSet2['Pkind'] = np.zeros(len(datalist))
+    dataSet2['Cluster'] = np.zeros(len(datalist))
+    
+    #Find all core points.
+    for pointIndex in range(0, dataSet2.shape[0]):
+        #Initialize num points to 0.
+        pointsDict[pointIndex] = 0
+        dist = 0
+        for comparisonIndex in range(0, dataSet2.shape[0]):
+            dist = math.sqrt(math.pow(dataSet2.iloc[pointIndex].X - dataSet2.iloc[comparisonIndex].X, 2))
+            if dist <= radius:
+                pointsDict[pointIndex] = pointsDict[pointIndex] + 1
+            if pointsDict[pointIndex] >= minpts:
+                #Core point identified. Mark it and move to next point.
+                dataSet2['Pkind'].iloc[pointIndex] = 1
+                continue
+            
+    #Find all fringe points.
+    for fringePointIndex in dataSet2[dataSet2.Pkind == 0].index.tolist(): 
+        for comparisonIndex in dataSet2[dataSet2.Pkind == 1].index.tolist():
+            dist = math.sqrt(math.pow(dataSet2.iloc[fringePointIndex].X - dataSet2.iloc[comparisonIndex].X, 2))
+            if dist <= radius:            
+                dataSet2['Pkind'].iloc[fringePointIndex] = 2
+                continue
+            
+    print("Noise points: Pkind = 0")        
+    print("Core points: Pkind = 1") 
+    print("Fringe points: Pkind = 2")   
+    print dataSet2
+    print        
+            
+    #Eliminate all points not core or fringe.
+    noise = dataSet2.copy()[dataSet2.Pkind == 0]
+    dataSet2 = dataSet2[dataSet2.Pkind != 0]
+    
+    #For each core point
+    for corePointIndex in range(0, dataSet2.shape[0]):
+        #If non-core point, continue.
+        if dataSet2['Pkind'].iloc[corePointIndex] != 1:
+            continue
+        #If core point and no cluster, assign new cluster. 
+        if dataSet2['Cluster'].iloc[corePointIndex] == 0:
+            numClusters += 1
+            dataSet2['Cluster'].iloc[corePointIndex] = numClusters
+        #Assign all points in vicinity of core to same cluster as core.
+        for comparisonIndex in range(0, dataSet2.shape[0]):
+            dist = math.sqrt(math.pow(dataSet2.iloc[corePointIndex].X - dataSet2.iloc[comparisonIndex].X, 2))
+            if dist <= radius and dataSet2['Cluster'].iloc[comparisonIndex] == 0:
+                dataSet2['Cluster'].iloc[comparisonIndex] = dataSet2['Cluster'].iloc[corePointIndex] 
+    
+    plt.clf()
+    colorHandles = []
+    #Create each cluster scatter plot.
+    for cluster in set(dataSet2.Cluster.tolist()):
+        randColor = [random.random(), random.random(), random.random()]
+        colorHandles.append(matplotlib.patches.Patch(color=randColor, label='K=' + str(cluster)))      
+        plt.scatter(dataSet2[dataSet2.Cluster == cluster].X, np.zeros(dataSet2[dataSet2.Cluster == cluster].shape[0]), label="Cluster " + str(cluster), color=randColor)     
+    #Plot noise
+    colorHandles.append(matplotlib.patches.Patch(color='r', label='noise' + str(cluster)))      
+    plt.scatter(noise.X, np.zeros(noise.shape[0]), color='r')     
+    
+    #Plot final graph of data. 
+    plt.legend(handles=colorHandles, bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.show()   
+    
+    #Part C
+    columnList = dataSet.columns.tolist()
+    columnList.remove('Pkind')
+    rindex = randIndex(dataSet[columnList], dataSet2[columnList])
+    print "Rand index = " + str(rindex)
 
 
 def main():
     print("In Main.")
-    #prob1()
+    prob1()
     prob2()
+    prob3()
 
 
 
