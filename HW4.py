@@ -228,6 +228,13 @@ def prob2():
     print "Sum squared error for complete link: " + str(completeLinkSSE)
     print "Cluster contributing most to SSE: " + str(maxClusterContribComplete[0])    
     print "Cluster SSE: " + str(maxClusterContribComplete[1])
+
+    #PART D. Build proximity and incidence matricies, and calculate the correlation for each clustering. 
+    print
+    corr, pm, im = correlationClusterAnalysis(prob2Data)
+    print("Correlation coeff of single linkage clustering: " + str(corr[0][1]))
+    corr, pm, im = correlationClusterAnalysis(prob2Data2)
+    print("Correlation coeff of complete linkage clustering: " + str(corr[0][1]))
     
 
 def sumSquaredError(dataSet):
@@ -254,6 +261,27 @@ def sumSquaredError(dataSet):
     
     
     return totalSum, maxClusterContribution
+
+
+def correlationClusterAnalysis(dataSet):
+    #Make an mxm matrix where m is the number of data points.
+    proximityMatrix = np.zeros((dataSet.shape[0], dataSet.shape[0]))
+    incidenceMatrix = np.zeros((dataSet.shape[0], dataSet.shape[0]))
+    
+    for i in range(0, dataSet.shape[0]):
+        for j in range(i, dataSet.shape[0]):
+            distance = math.pow(math.pow(dataSet.iloc[i].X - dataSet.iloc[j].X, 2) + math.pow(dataSet.iloc[i].Y - dataSet.iloc[j].Y, 2), .5)
+            proximityMatrix[i,j] = distance
+            proximityMatrix[j,i] = distance
+            if dataSet['Cluster'].iloc[i] == dataSet['Cluster'].iloc[j]:
+                incidenceMatrix[i,j] = 1
+                incidenceMatrix[j,i] = 1
+        
+    correlation = np.corrcoef(proximityMatrix.flatten(), incidenceMatrix.flatten())        
+    
+    return correlation, proximityMatrix, incidenceMatrix
+    
+    
 
 
 def main():
